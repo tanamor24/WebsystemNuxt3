@@ -1,28 +1,13 @@
 import 'package:flutter/material.dart';
 
-class SigninScreen extends StatefulWidget {
-  const SigninScreen({super.key});
+class SignupScreen extends StatefulWidget {
+  const SignupScreen({super.key});
 
   @override
-  State<SigninScreen> createState() => _SigninScreenState();
+  State<SignupScreen> createState() => _SignupScreenState();
 }
 
-class _SigninScreenState extends State<SigninScreen> {
-  final TextEditingController _usernameController = TextEditingController();
-  final TextEditingController _passwordController = TextEditingController();
-  String Username = "admin";
-  String Password = "admin123";
-
-  void signin() {
-    if (_usernameController.text == _usernameController &&
-        _passwordController.text == Password) {
-      Navigator.push(
-        context,
-        MaterialPageRoute(builder: (_) => SigninScreen()),
-      );
-    } else {}
-  }
-
+class _SignupScreenState extends State<SignupScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -33,10 +18,10 @@ class _SigninScreenState extends State<SigninScreen> {
             children: [
               // Logo (make sure image exists in assets)
               Image.asset('assets/images/2.png', height: 300),
-              const SizedBox(height: 10),
+              const SizedBox(height: 15),
               // Welcome text
               const Text(
-                "Online Shopping",
+                "Sign up",
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
@@ -44,15 +29,11 @@ class _SigninScreenState extends State<SigninScreen> {
                 ),
               ),
 
-              const SizedBox(height: 20),
-
-              // Email textfield
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: TextField(
-                  controller: _usernameController,
                   decoration: InputDecoration(
-                    labelText: "Username",
+                    labelText: "Enter Username",
                     labelStyle: const TextStyle(
                       color: Color.fromARGB(255, 112, 111, 112),
                       fontStyle: FontStyle.italic,
@@ -72,20 +53,42 @@ class _SigninScreenState extends State<SigninScreen> {
                 ),
               ),
 
-              // Password textfield
               Padding(
                 padding: const EdgeInsets.all(8.0),
                 child: TextField(
-                  controller: _passwordController,
                   obscureText: true,
                   decoration: InputDecoration(
-                    labelText: "Password",
+                    labelText: "Enter Password",
                     labelStyle: const TextStyle(
                       color: Color.fromARGB(255, 106, 104, 107),
                       fontStyle: FontStyle.italic,
                     ),
                     prefixIcon: const Icon(Icons.lock),
                     prefixIconColor: const Color.fromARGB(255, 0, 0, 0),
+                    enabledBorder: OutlineInputBorder(
+                      borderSide: const BorderSide(
+                        color: Color.fromARGB(255, 0, 0, 0),
+                      ),
+                      borderRadius: BorderRadius.circular(15),
+                    ),
+                    focusedBorder: OutlineInputBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    ),
+                  ),
+                ),
+              ),
+
+              Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: TextField(
+                  decoration: InputDecoration(
+                    labelText: "Confirm Password",
+                    labelStyle: const TextStyle(
+                      color: Color.fromARGB(255, 112, 111, 112),
+                      fontStyle: FontStyle.italic,
+                    ),
+                    prefixIcon: const Icon(Icons.person),
+                    prefixIconColor: const Color.fromARGB(255, 3, 3, 3),
                     enabledBorder: OutlineInputBorder(
                       borderSide: const BorderSide(
                         color: Color.fromARGB(255, 0, 0, 0),
@@ -106,7 +109,9 @@ class _SigninScreenState extends State<SigninScreen> {
                 height: 50,
                 width: double.infinity,
                 child: ElevatedButton(
-                  onPressed: () {},
+                  onPressed: () {
+                    // Handle login
+                  },
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Colors.blueGrey,
                     shape: RoundedRectangleBorder(
@@ -114,9 +119,9 @@ class _SigninScreenState extends State<SigninScreen> {
                     ),
                   ),
                   child: const Text(
-                    "Login",
+                    "Sign up",
                     style: TextStyle(
-                      fontSize: 20,
+                      fontSize: 15,
                       color: Color.fromARGB(255, 255, 255, 255),
                     ),
                   ),
@@ -126,23 +131,6 @@ class _SigninScreenState extends State<SigninScreen> {
               const SizedBox(height: 20),
 
               // Register link
-              TextButton(
-                onPressed: () {
-                  Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => const SignUpScreen(),
-                    ),
-                  );
-                },
-                child: const Text(
-                  "Register",
-                  style: TextStyle(
-                    fontSize: 18,
-                    color: Color.fromARGB(255, 43, 155, 121),
-                  ),
-                ),
-              ),
             ],
           ),
         ),
