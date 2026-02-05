@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+
 class SignupScreen extends StatefulWidget {
   const SignupScreen({super.key});
 
@@ -17,7 +18,7 @@ class _SignupScreenState extends State<SignupScreen> {
           child: Column(
             children: [
               // Logo (make sure image exists in assets)
-              Image.asset('assets/images/2.png', height: 300),
+              Image.asset('assets/images/logo.png', height: 300),
               const SizedBox(height: 15),
               // Welcome text
               const Text(
@@ -25,9 +26,10 @@ class _SignupScreenState extends State<SignupScreen> {
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
-                  color: Color.fromARGB(255, 84, 96, 102),
+                  color: Color.fromARGB(255, 201, 59, 59),
                 ),
               ),
+              const SizedBox(height: 20),
 
               Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -35,14 +37,14 @@ class _SignupScreenState extends State<SignupScreen> {
                   decoration: InputDecoration(
                     labelText: "Enter Username",
                     labelStyle: const TextStyle(
-                      color: Color.fromARGB(255, 112, 111, 112),
+                      color: Color.fromARGB(255, 0, 0, 0),
                       fontStyle: FontStyle.italic,
                     ),
                     prefixIcon: const Icon(Icons.person),
                     prefixIconColor: const Color.fromARGB(255, 3, 3, 3),
                     enabledBorder: OutlineInputBorder(
                       borderSide: const BorderSide(
-                        color: Color.fromARGB(255, 0, 0, 0),
+                        color: Color.fromARGB(255, 212, 77, 77),
                       ),
                       borderRadius: BorderRadius.circular(15),
                     ),
@@ -52,6 +54,7 @@ class _SignupScreenState extends State<SignupScreen> {
                   ),
                 ),
               ),
+              const SizedBox(height: 10),
 
               Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -60,14 +63,14 @@ class _SignupScreenState extends State<SignupScreen> {
                   decoration: InputDecoration(
                     labelText: "Enter Password",
                     labelStyle: const TextStyle(
-                      color: Color.fromARGB(255, 106, 104, 107),
+                      color: Color.fromARGB(255, 0, 0, 0),
                       fontStyle: FontStyle.italic,
                     ),
                     prefixIcon: const Icon(Icons.lock),
                     prefixIconColor: const Color.fromARGB(255, 0, 0, 0),
                     enabledBorder: OutlineInputBorder(
                       borderSide: const BorderSide(
-                        color: Color.fromARGB(255, 0, 0, 0),
+                        color: Color.fromARGB(255, 201, 59, 59),
                       ),
                       borderRadius: BorderRadius.circular(15),
                     ),
@@ -77,6 +80,7 @@ class _SignupScreenState extends State<SignupScreen> {
                   ),
                 ),
               ),
+              const SizedBox(height: 10),
 
               Padding(
                 padding: const EdgeInsets.all(8.0),
@@ -84,14 +88,14 @@ class _SignupScreenState extends State<SignupScreen> {
                   decoration: InputDecoration(
                     labelText: "Confirm Password",
                     labelStyle: const TextStyle(
-                      color: Color.fromARGB(255, 112, 111, 112),
+                      color: Color.fromARGB(255, 0, 0, 0),
                       fontStyle: FontStyle.italic,
                     ),
                     prefixIcon: const Icon(Icons.person),
                     prefixIconColor: const Color.fromARGB(255, 3, 3, 3),
                     enabledBorder: OutlineInputBorder(
                       borderSide: const BorderSide(
-                        color: Color.fromARGB(255, 0, 0, 0),
+                        color: Color.fromARGB(255, 201, 59, 59),
                       ),
                       borderRadius: BorderRadius.circular(15),
                     ),
@@ -102,7 +106,7 @@ class _SignupScreenState extends State<SignupScreen> {
                 ),
               ),
 
-              const SizedBox(height: 20),
+              const SizedBox(height: 10),
 
               // Sign in button (ElevatedButton)
               SizedBox(
@@ -113,7 +117,7 @@ class _SignupScreenState extends State<SignupScreen> {
                     // Handle login
                   },
                   style: ElevatedButton.styleFrom(
-                    backgroundColor: Colors.blueGrey,
+                    backgroundColor: const Color.fromARGB(255, 221, 75, 75),
                     shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(20),
                     ),
